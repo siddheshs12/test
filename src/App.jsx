@@ -1,20 +1,20 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LandingPage from './pages/LandingPage';
-import Register from './pages/Register'; // Using the file visible in your screenshot
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-// Placeholder for Login if you don't have it yet
-const Login = () => <div className="text-center mt-20">Login Page Coming Soon</div>;
+// CORRECTED IMPORTS:
+import LandingPage from './pages/LandingPage'; 
+import LoginPage from './pages/Login';         // Changed from './pages/LoginPage'
+import RegisterPage from './pages/Register';   // Changed from './pages/RegisterPage'
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 
